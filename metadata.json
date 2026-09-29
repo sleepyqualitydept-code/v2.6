@@ -1,0 +1,10 @@
+{
+  "name": "Remix v2.6",
+  "description": "Imported from GitHub: highsleep/v2.6",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

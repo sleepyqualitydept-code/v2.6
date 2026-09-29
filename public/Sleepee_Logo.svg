@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 105" width="100%" height="100%">
+  <!-- Sleepee Official Corporate Logo -->
+  <g id="sleepee-logo" fill="#0c253b">
+    
+    <!-- Main Arabic Word: سليبي -->
+    <text
+      x="330"
+      y="50"
+      text-anchor="end"
+      font-family="'IBM Plex Sans Arabic', 'Cairo', -apple-system, sans-serif"
+      font-weight="800"
+      font-size="52"
+      fill="#0c253b"
+      letter-spacing="0"
+    >سليبي</text>
+
+    <!-- Two Navy Dots under the Left segment -->
+    <circle cx="148" cy="62" r="4.5" fill="#0c253b" />
+    <circle cx="134" cy="62" r="4.5" fill="#0c253b" />
+
+    <!-- Red Rounded Capsule Bar -->
+    <rect x="168" y="58" width="38" height="8" rx="4" fill="#e51a2d" />
+
+    <!-- English Brand Wordmark: Sleepee -->
+    <text
+      x="328"
+      y="75"
+      text-anchor="end"
+      font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+      font-weight="800"
+      font-size="21"
+      fill="#0c253b"
+      letter-spacing="0.5px"
+    >Sleepee</text>
+
+    <!-- Corporate Subtitle: منظومة إدارة وتوثيق الضمان -->
+    <text
+      x="330"
+      y="98"
+      text-anchor="end"
+      font-family="'IBM Plex Sans Arabic', 'Cairo', -apple-system, sans-serif"
+      font-weight="600"
+      font-size="15"
+      fill="#0c253b"
+      letter-spacing="0"
+    >منظومة إدارة وتوثيق الضمان</text>
+
+  </g>
+</svg>

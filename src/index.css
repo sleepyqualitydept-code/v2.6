@@ -1,0 +1,254 @@
+@import "tailwindcss";
+
+:root {
+  --font-scale: 1;
+  --surface: #ffffff;
+  --surface-secondary: #f8fafc;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --border-color: #e2e8f0;
+  --input-bg: #ffffff;
+  --input-border: #cbd5e1;
+  --input-placeholder: #94a3b8;
+}
+
+.dark {
+  --surface: #0f172a;
+  --surface-secondary: #111827;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --border-color: #334155;
+  --input-bg: #1e293b;
+  --input-border: #475569;
+  --input-placeholder: #94a3b8;
+}
+
+@theme {
+  --color-surface: var(--surface);
+  --color-surface-secondary: var(--surface-secondary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border-main: var(--border-color);
+  --color-input-bg: var(--input-bg);
+  --color-input-border: var(--input-border);
+  --color-input-placeholder: var(--input-placeholder);
+}
+
+html {
+  letter-spacing: normal !important;
+  font-feature-settings: "kern" 1, "liga" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-size: calc(100% * var(--font-scale, 1));
+  transition: font-size 0.2s ease;
+}
+
+body {
+  background-color: var(--surface);
+  color: var(--text-primary);
+  letter-spacing: normal !important;
+  line-height: 1.6;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+html[dir="rtl"] body {
+  direction: rtl;
+}
+
+html[dir="ltr"] body {
+  direction: ltr;
+}
+
+/* Prevent letter-spacing breaking Arabic ligatures */
+*, ::before, ::after {
+  letter-spacing: normal;
+}
+
+/* Tabular numbers for clean numeric alignment */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Exclude Header and Footer from drastic resizing to maintain their exact corporate proportions */
+header, footer {
+  font-size: 16px;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ========================================================
+    ACCESSIBILITY & FOCUS VISIBLE ENHANCEMENTS (WCAG 2.1 AA)
+    ======================================================== */
+:focus-visible {
+  outline: 2px solid #0066ff !important;
+  outline-offset: 2px !important;
+}
+
+html.enhanced-focus :focus-visible {
+  outline: 3px solid #0066ff !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 5px rgba(0, 102, 255, 0.35) !important;
+}
+
+/* Reduced Motion Mode */
+html.reduce-motion *,
+html.reduce-motion *::before,
+html.reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Skip link styling */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.75rem 1.25rem;
+  background-color: #0B2D5C;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  transition: top 0.2s ease-in-out;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ========================================================
+    HIGH CONTRAST MODE (WCAG AAA) - DEDICATED SEPARATE MODE
+    ======================================================== */
+html.high-contrast,
+.high-contrast {
+  --high-contrast-border: #000000;
+}
+
+html.high-contrast body {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+html.high-contrast .bg-white,
+html.high-contrast .bg-white\/95,
+html.high-contrast .bg-slate-50,
+html.high-contrast .bg-blue-50,
+html.high-contrast .bg-emerald-50,
+html.high-contrast .bg-rose-50 {
+  background-color: #ffffff !important;
+  border-color: #000000 !important;
+}
+
+html.high-contrast button,
+html.high-contrast a,
+html.high-contrast input {
+  border-color: #000000 !important;
+}
+
+html.high-contrast .text-slate-500,
+html.high-contrast .text-slate-600,
+html.high-contrast .text-slate-700 {
+  color: #000000 !important;
+}
+
+html.high-contrast.dark body {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+html.high-contrast.dark .bg-white,
+html.high-contrast.dark .bg-slate-900,
+html.high-contrast.dark .bg-slate-800 {
+  background-color: #000000 !important;
+  border-color: #ffff00 !important;
+}
+
+html.high-contrast.dark .text-slate-100,
+html.high-contrast.dark .text-slate-300,
+html.high-contrast.dark .text-slate-400 {
+  color: #ffff00 !important;
+}
+
+/* ========================================================
+    PRINT STYLES
+    ======================================================== */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm 10mm 12mm;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #0b2d5c !important;
+    font-size: 12pt !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  header,
+  footer,
+  nav,
+  button,
+  .no-print,
+  [role="dialog"],
+  .fixed,
+  .sticky {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-expand {
+    display: block !important;
+    opacity: 1 !important;
+    height: auto !important;
+    max-height: none !important;
+    visibility: visible !important;
+  }
+
+  .certificate-card,
+  .printable-certificate {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    box-shadow: none !important;
+    border: 2px solid #0b2d5c !important;
+    border-radius: 12px !important;
+    padding: 16px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    background: #ffffff !important;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}
